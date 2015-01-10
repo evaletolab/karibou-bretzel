@@ -1,0 +1,84 @@
+    <div id="content" class="content " >
+
+      <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-12 col-md-7 ">
+          <p class="pull-right visible-sm visible-xs -visible-md">
+            <button id="toggle-examples" type="button" class="btn btn-primary btn-xs" 
+            menu-toggle="offcanvas">Toutes les recettes</button>
+          </p>
+          <div class="recipes">
+
+            <h3>Calculer le litrage</h3>
+            <h4 ng-show="selected.idx!==-1">{{selected.recipe.title}}</h4>
+            <p ng-show="selected.idx===-1">
+              Sélectionner une recette à droite.
+            </p>
+            <table class="table table-condensed" ng-show="selected.idx!=-1">
+              <thead>
+                <tr>
+                  <th>Quantité</th>
+                  <th>Poid (kg)</th>
+                  <th>Total (kg)</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+              <tr ng-repeat="label in selected.labels">
+                <td>
+                <input type="text" class="form-control" ng-model="product[label]" placeholder="{{label}}" >
+                </td>
+                <td class="txt">{{selected.recipe.commande[label]}}</td>
+                <td class="txt">{{selected.recipe.commande[label] *(product[label]||0)}} </td>
+              </tr>
+              </tbody>
+            </table>
+
+            <div class="alert alert-info" role="alert" ng-show="selected.idx!==-1">
+              <h2>Litres: {{selected.values['eau']|number:1}}</h2>
+              <span> somme: {{computeSum()}}, facteur: {{selected.values.factor|number:2}}</span>
+            </div>
+
+          </div>
+          
+          
+          <!-- DISPLAY SITE INFO -->
+          <hr/>
+          <div class=" headlines">
+            <h4>Comment ajouter une recette?</h4>
+            <p>
+          </div><!--/row-->
+        </div><!--/span-->
+
+        <!-- DISPLAY EXAMPLES -->
+        <div class="col-xs-6 col-sm-6 col-md-5 sidebar-offcanvas" id="sidebar" role="navigation" >
+
+
+          <div class="list-group examples">
+<!--
+            <div class=" filter-search  has-feedback">
+              <span style="top:25px" class="glyphicon glyphicon-search form-control-feedback"></span>
+              <input type="text" class="form-control" placeholder="Filter sparql examples" ng-model="filter">
+            </div>
+-->
+            <a href="#" 
+               class="list-group-item recipe-{{$index}}" 
+               ng-click="selectRecipe($index)" 
+               ng-class="{'active':selected.idx===$index}"
+               ng-repeat="recipe in recipes|filter:filter">
+              <h4 class="list-group-item-heading">{{recipe.title}}</h4>
+<!--              <p class="list-group-item-text"><span  class=" label label-snorql"  >
+                {{example.tags}}</span></p> -->
+            </a>
+
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>&copy; KARIBOU @ evaleto 2015</p>
+      </footer>
+
+    </div><!--/.container-->

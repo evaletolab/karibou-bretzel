@@ -1,0 +1,49 @@
+[
+  {
+    "title":"Recette de base pain fermier",
+    "rank":0,
+    "base":{
+      "eau":1000.0,
+      "MI-Blanc":400.0,
+      "Seigle noir fin":100.0,
+      "Paysan":850.0,
+      "Levure":10.0,
+      "Sel":35.0,
+      "Additif":100.0,
+      "Levain":100.0
+    },
+    "commande":{
+      "miche boule":610,
+      "Fermier 1  KG":1250,
+      "Fermier 2KG":2350,
+      "Baguette fermier":450,
+      "Fusette":200.0,
+      "ballons":60.0,
+      "ballons":100.0,
+      "Autre":0,
+      "Autre":0
+    }
+  },
+  {
+    "title":"Recette de base Mi -Blanc avec  levain liquide",
+    "rank":1,
+    "base":{
+      "Eau":1000.0,
+      "MI-Blanc":1500.0,
+      "Levure":30.0,
+      "Sel":30.0,
+      "Additif":20.0,
+      "Levain":100.0
+    },   
+    "commande":{
+      "M-B barquette":450.0,
+      "Titi":450.0,
+      "Balois":2300,
+      "St- Gallois":400,
+      "M-B 60gr":60,
+      "M-B 100gr":100,
+      "Autre":0,
+      "Autre":0
+    }
+  }
+]

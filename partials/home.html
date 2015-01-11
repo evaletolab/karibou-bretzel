@@ -47,8 +47,36 @@
           
           <!-- DISPLAY SITE INFO -->
           <hr/>
-          <div class=" headlines">
+          <div class=" headlines" ng-show="selected.idx===-1">
             <h4>Comment ajouter une recette?</h4>
+            <p>Il faut créer un set de donnée en suivant l'exemple ci-dessous, et ensuite me l'envoyer par email</p>
+            <pre>
+  {
+    "title":"Recette de base pain fermier",
+    "rank":0,
+    "base":{
+      "eau":1000.0,
+      "MI-Blanc":400.0,
+      "Seigle noir fin":100.0,
+      "Paysan":850.0,
+      "Levure":10.0,
+      "Sel":35.0,
+      "Additif":10.0,
+      "Levain":500.0
+    },
+    "commande":{
+      "miche boule":610,
+      "Fermier 1KG":1250,
+      "Fermier 2KG":2350,
+      "Baguette fermier":450,
+      "Fusette":200.0,
+      "ballons":60.0,
+      "ballons":100.0,
+      "Autre":0,
+      "Autre":0
+    }
+  }              
+            </pre>
             <p>
           </div><!--/row-->
         </div><!--/span-->
@@ -81,7 +109,7 @@
       <hr>
 
       <footer>
-        <p>&copy; KARIBOU @ evaleto 2015</p>
+        <p>&copy; KARIBOU @ evaletolab 2015</p>
       </footer>
 
     </div><!--/.container-->

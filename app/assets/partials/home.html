@@ -17,6 +17,7 @@
             <table class="table table-condensed" ng-show="selected.idx!=-1">
               <thead>
                 <tr>
+                  <th style="width:150px">-</th>
                   <th>Quantité</th>
                   <th>Poid (kg)</th>
                   <th>Total (kg)</th>
@@ -25,10 +26,12 @@
               <tbody>
                 
               <tr ng-repeat="label in selected.labels">
-                <td>
-                <input type="text" class="form-control" ng-model="product[label]" placeholder="{{label}}" >
-                </td>
-                <td class="txt">{{selected.recipe.commande[label]}}</td>
+                <td class="txt -text-right text-bold">{{label}}</td>
+                <td style="width:180px"><input type="text" class="form-control" ng-model="product[label]" placeholder="..." ></td>
+                <!-- CUSTOM FIELD -->
+                <td ng-if="customField(label)" style="width:120px"><input type="text" class="form-control" ng-model="selected.recipe.commande[label]" placeholder="..." ></td>
+                <!-- PREDEFINED FIELD -->
+                <td class="txt" ng-if="!customField(label)">{{selected.recipe.commande[label]}}</td>
                 <td class="txt">{{selected.recipe.commande[label] *(product[label]||0)}} </td>
               </tr>
               </tbody>

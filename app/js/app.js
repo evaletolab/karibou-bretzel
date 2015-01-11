@@ -41,6 +41,10 @@ function AppCtrl($scope, $timeout, $location, $http, config, $log) {
     //.map(function(r){return r.title})
   }
 
+  $scope.customField=function (name) {
+    return(name&&name.toLowerCase().indexOf('autre')!==-1)
+  }
+
   $scope.computeSum=function(){
     var sum=0;
     if($scope.selected.idx===-1) return sum;
